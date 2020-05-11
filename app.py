@@ -12,8 +12,8 @@ def hello():
     return "Hello World"
 
 
-app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
-app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
+app.config["MONGO_URI"] = os.environ.get("mongodb+srv://krisztinatxt:4l4kul4mol3kul4@myfirstcluster-wrvet.mongodb.net/lockdown_kitchen?retryWrites=true")
+app.config["MONGO_DBNAME"] = os.environ.get("lockdown_kitchen")
 
 
 
