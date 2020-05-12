@@ -7,8 +7,8 @@ if path.exists("env.py"):
 
 app = Flask(__name__)
 
-app.config["MONGO_URI"] = os.environ.get("mongodb+srv://krisztinatxt:4l4kul4mol3kul4@myfirstcluster-wrvet.mongodb.net/lockdown_kitchen?retryWrites=true")
-app.config["MONGO_DBNAME"] = os.environ.get("lockdown_kitchen")
+os.environ.get("MONGO_URI")
+os.environ.get("MONGO_DBNAME")
 
 
 @app.route('/')
