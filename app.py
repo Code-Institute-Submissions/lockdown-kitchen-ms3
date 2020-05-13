@@ -1,7 +1,7 @@
 from flask_pymongo import PyMongo
 import os
 from os import path
-from flask import Flask
+from flask import Flask, render_template, redirect, request, url_for
 if path.exists("env.py"):
     import env
 
@@ -11,9 +11,11 @@ os.environ.get("MONGO_URI")
 os.environ.get("MONGO_DBNAME")
 
 
-@app.route('/')
-def hello():
-    return "Hello World"
+mongo = PyMongo(app)
+
+@app.route('/get_recipes')
+def get_recipes():
+    return render_template("recipes.html", recipes=mongo.db.recipes.find())
 
 
 if __name__ == '__main__':
