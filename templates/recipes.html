@@ -1,11 +1,11 @@
+{% extends 'base.html'%}
+{% block content %}
+    {% for recipe in recipes %}
+            {{recipe.title}}
+            {{recipe.category_name}}
+            {{recipe.ingredients}}
+            {{recipe.how_to}}
+            {{recipe.picture}}
+    {% endfor %}
 
-{% extends 'base.html'%} {% block content %}
-        {% for recipe in recipes %}
-            {{recipes.title}}
-            {{recipes.category_name}}
-            {{recipes.ingredients}}
-            {{recipes.how_to}}
-            {{recipes.picture}}
-        {% endfor %}
-  
 {% endblock %}
