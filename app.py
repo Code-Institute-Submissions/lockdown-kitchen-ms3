@@ -22,7 +22,7 @@ def get_recipes():
 
 #Add new recipe using a form, submiting it using POST method
 @app.route('/add_recipe')
-def add_recipes():
+def add_recipe():
     return render_template('addrecipes.html',
     categories=mongo.db.categories.find())
 
