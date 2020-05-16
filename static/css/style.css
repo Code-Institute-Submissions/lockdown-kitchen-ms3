@@ -8,3 +8,14 @@
     border-radius:0.3rem;
     
 }
+
+.logo{
+    width: 7rem;
+    height: 7rem;
+    text-align: center;
+    
+}
+
+.title{
+    margin-left:45%;
+}

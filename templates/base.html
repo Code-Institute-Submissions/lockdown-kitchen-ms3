@@ -9,8 +9,10 @@
    <header>
  <nav>
      <div class="nav-wrapper">
-                <a href="{{url_for('get_recipes')}}" class="brand-logo"></a> <img src="#">
-                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                <a href="{{url_for('get_recipes')}}" class="brand-logo">
+                <img src="https://github.com/krisztinatxt/lockdown-kitchen-ms3/blob/master/images/logo.png?raw=true" class="logo">     
+                <a class="title"> Lockdown Kitchen </a>
+                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons"></i></a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <li><a href="{{url_for('get_recipes')}}">Recipes</a></li>
                     <li><a href="{{url_for('add_recipe')}}">Add Your Recipe</a></li>
@@ -19,7 +21,7 @@
                     <li><a href="{{url_for('get_recipes')}}">Recipes</a></li>
                     <li><a href="{{url_for('add_recipe')}}">Add Your Recipe</a></li>
                 </ul>
-            </div>
+    </div>
   </nav>
    </header>
    <body>
