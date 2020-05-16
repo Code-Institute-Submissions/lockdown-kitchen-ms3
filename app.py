@@ -42,6 +42,21 @@ def edit_recipe(recipe_id):
     return render_template('editrecipe.html', recipe=the_recipe,
                            categories=all_categories)
 
+#Update the article after editing it using JSON
+@app.route('/update_recipe/<recipe_id>', methods=["POST"])
+def update_recipe(recipe_id):
+    recipes = mongo.db.recipes
+    recipes.update( {'_id': ObjectId(recipe_id)},
+    {
+        'title':request.form.get('title'),
+        'ingredients':request.form.get('ingredients'),
+        'how_to': request.form.get('how_to'),
+        'category_name': request.form.get('category_name'),
+        'picture':request.form.get('picture')
+    })
+#When the recipe is updated, redirect the user to the list of recipes
+    return redirect(url_for('get_recipes'))
+
 #Host and Port set
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
