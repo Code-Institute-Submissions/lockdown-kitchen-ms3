@@ -10,9 +10,15 @@
 }
 
 .logo{
-    width: 7rem;
-    height: 7rem;
-    text-align: center;
+    position: absolute;
+    top:0;
+
+}
+
+.logo-picture{
+    width: 9.5rem;
+    height: 7.5rem;
+    
     
 }
 
