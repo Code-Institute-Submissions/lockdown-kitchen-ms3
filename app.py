@@ -57,6 +57,12 @@ def update_recipe(recipe_id):
 #When the recipe is updated, redirect the user to the list of recipes
     return redirect(url_for('get_recipes'))
 
+@app.route('/delete_recipe/<recipe_id>')
+def delete_recipe(recipe_id):
+    mongo.db.recipes.remove({'_id': ObjectId(recipe_id)})
+    return redirect(url_for('get_recipes'))
+
+
 #Host and Port set
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
