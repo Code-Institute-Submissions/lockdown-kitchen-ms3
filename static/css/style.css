@@ -1,3 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+
+.nav-wrapper{
+    background-color: #00766B;
+    
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    font-family: 'Roboto Slab', serif;
+  }
+
+main {
+    flex: 1 0 auto;
+  }
+
 .btn_recipe{
     height: 2.1rem;
     width: 1rem;
@@ -24,4 +42,13 @@
 
 .title{
     margin-left:45%;
+    }
+
+.page-footer{
+    background-color: #00766B;
+    color: aliceblue;
+}
+.btn-footer{
+    padding-right: 3%;
+    color:aliceblue;
 }
