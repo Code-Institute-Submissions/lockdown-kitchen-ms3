@@ -48,7 +48,7 @@ main {
     background-color: #00766B;
     color: aliceblue;
 }
-.btn-footer{
+#btn-footer{
     padding-right: 3%;
     color:aliceblue;
 }
