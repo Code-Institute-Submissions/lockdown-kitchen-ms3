@@ -1,21 +1,13 @@
 <!-- Base document used for following DRY -Dont Repeat Yourself - principle  -->
 <!DOCTYPE html>
 <html>
-   <head>
-       <link rel="icon" sizes="192x192" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon">
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-      <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css"/>
-      <link rel="stylesheet" href="{{url_for('static', filename='js/script.js')}}" type="text/css"/>
-      <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
-      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js">
-      </script>
-      <script type="text/javascript">
-            (function(){
-            emailjs.init("user_UW97WmP3GsBepuyB8Vffd");
-      })();
-</script>
-   </head>
+    <head>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+        <link rel="icon" sizes="192x192" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon">
+        <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css" />
+    </head>
    <header>
   <nav>
             <div class="nav-wrapper">
@@ -56,7 +48,7 @@
             </div>
          </div>
       </footer>
-      <!-- Modal Structure -->
+      <!-- Modal Structure, Form -->
       <div id="modal1" class="modal bottom-sheet">
          <div class="modal-content">
             <h4>Send me feedback!</h4>
@@ -67,21 +59,16 @@
                <input type="email" name="emailaddress" id="emailaddress" placeholder="Your email address..." required>
                <label for="feedback" class="label-feedback">Feedback:</label>
                <textarea id="feedback" name="feedback" placeholder="Write your feedback here" required></textarea>
-                <button class="btn waves-effect waves-light feedback_button" type="submit" value = "send" name="action">Submit
+               <button class="btn waves-effect waves-light feedback_button" type="submit" value = "send" name="action">Submit </button>
                 <i class="material-icons right">send</i>
-            </form>
-         </div>
-         
+            </form>            
+         </div> 
       </div>
-      <script src="{{ url_for('static', filename = 'js/sendEmail.js') }}"></script>
+<!--Scripts-->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js"> </script>
+      <script src="{{ url_for('static', filename='js/sendEmail.js') }}"></script>
       <script src="{{ url_for('static', filename='js/script.js') }}"></script>
-      <script type="text/javascript"
-        src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js">
-      </script>
-
-      
-      
    </body>
 </html>
