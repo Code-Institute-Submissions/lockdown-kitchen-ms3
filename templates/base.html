@@ -2,10 +2,11 @@
 <!DOCTYPE html>
 <html>
    <head>
-      <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico">
+       <link rel="icon" sizes="192x192" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon">
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
       <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css"/>
+      <link rel="stylesheet" href="{{url_for('static', filename='js/script.js')}}" type="text/css"/>
       <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
       <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
     
@@ -73,17 +74,9 @@
       </div>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-      <script src="js/email.js"></script>
+      <script src="{{ url_for('static', filename='js/script.js') }}"></script>
       <!-- JavaScript codes -->
-      <script type="text/javascript">
-         $(document).ready(function() {
-         //When the document is ready, the user is able to select a category before submiting the recipe
-         $('select').material_select();
-         $(".button-collapse").sideNav();
-         $('.modal').modal();
-         });
-         
-      </script>
+      
       
    </body>
 </html>
