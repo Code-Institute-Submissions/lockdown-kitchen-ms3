@@ -8,9 +8,13 @@
       <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css"/>
       <link rel="stylesheet" href="{{url_for('static', filename='js/script.js')}}" type="text/css"/>
       <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
-      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
-    
-
+      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js">
+      </script>
+      <script type="text/javascript">
+            (function(){
+            emailjs.init("user_UW97WmP3GsBepuyB8Vffd");
+      })();
+</script>
    </head>
    <header>
   <nav>
@@ -56,26 +60,27 @@
       <div id="modal1" class="modal bottom-sheet">
          <div class="modal-content">
             <h4>Send me feedback!</h4>
-            <form id="contactForm" onsubmit="return sendMail(this);" method="POST">
-               <input type="hidden" name="contact_number">
+            <form onsubmit="return sendMail(this);">
                <label for="name" class="label-name">Name:</label>
-               <input type="text" name="from_name" id="name" placeholder="Your name..." required>
+               <input type="text" name="name" id="name" placeholder="Your name..." required>
                <label for="email" class="label-email">Email:</label>
-               <input type="email" name="from_email" id="email" placeholder="Your email address..." required>
+               <input type="email" name="emailaddress" id="emailaddress" placeholder="Your email address..." required>
                <label for="feedback" class="label-feedback">Feedback:</label>
                <textarea id="feedback" name="feedback" placeholder="Write your feedback here" required></textarea>
+                <button class="btn waves-effect waves-light feedback_button" type="submit" value = "send" name="action">Submit
+                <i class="material-icons right">send</i>
             </form>
          </div>
-         <div class="modal-footer">
-            <button class="btn waves-effect waves-light feedback_button" type="submit" value = "send" name="action">Submit
-            <i class="material-icons right">send</i>
-            </button>
-         </div>
+         
       </div>
+      <script src="{{ url_for('static', filename = 'js/sendEmail.js') }}"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
       <script src="{{ url_for('static', filename='js/script.js') }}"></script>
-      <!-- JavaScript codes -->
+      <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js">
+      </script>
+
       
       
    </body>
