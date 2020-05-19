@@ -37,3 +37,7 @@ main {
     padding-right: 3%;
     color:aliceblue;
 }
+
+.modal2{
+    display: none;
+}

@@ -7,12 +7,13 @@ function sendMail(contactForm) {
     })
     .then(
         function(response) {
-            $('#modal1').modal('close');
-            Materialize.toast('Thanks for your feedback!', 4000) 
+           $('#modal1').modal('close');
+           $('.modal2').modal('open');
             console.log("SUCCESS", response);
         },
         function(error) {
             $('#modal1').modal('close');
+            $('.modal3').modal('open');
             console.log("FAILED", error);
         }
     );
