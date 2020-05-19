@@ -5,22 +5,16 @@ function sendMail(contactForm) {
         "from_email": contactForm.emailaddress.value,
         "feedback": contactForm.feedback.value
     })
-       .then(
+    .then(
         function(response) {
-           $('#success').modal('open', response);
+            $('#modal1').modal('close');
+            Materialize.toast('Thanks for your feedback!', 4000) 
+            console.log("SUCCESS", response);
         },
         function(error) {
+            $('#modal1').modal('close');
             console.log("FAILED", error);
         }
     );
     return false;  // To block from loading a new page
 }
-
- $('.modal').modal({
-      dismissible: true, // Modal can be dismissed by clicking outside of the modal
-      opacity: .5, // Opacity of modal background
-      inDuration: 300, // Transition in duration
-      outDuration: 200, // Transition out duration
-      startingTop: '4%', // Starting top style attribute
-      endingTop: '10%', // Ending top style attribute
- )}
