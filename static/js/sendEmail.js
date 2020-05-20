@@ -1,3 +1,7 @@
+var success = document.querySelector(".modal2");
+var modalClose = document.querySelector("#modal1");
+
+
 function sendMail(contactForm) {
     emailjs.init("user_UW97WmP3GsBepuyB8Vffd");
     emailjs.send("gmail", "lockdown_kitchen", {
@@ -7,10 +11,14 @@ function sendMail(contactForm) {
     })
     .then(
         function(response) {
-           $('#modal1').modal('close');
-           $('.modal2').modal('open');
             console.log("SUCCESS", response);
+            modalClose.style.display = "none";
+            success.style.display = "block";
+            setTimeout(function() {
+            success.style.display = "none";
+            }, 3500);
         },
+        
         function(error) {
             $('#modal1').modal('close');
             $('.modal3').modal('open');
