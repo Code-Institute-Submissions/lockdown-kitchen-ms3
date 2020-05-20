@@ -1,5 +1,6 @@
 var success = document.querySelector("#modal2");
 var modalClose = document.querySelector("#modal1");
+var fail = document.querySelector("#modal3")
 
 
 function sendMail(contactForm) {
@@ -20,9 +21,12 @@ function sendMail(contactForm) {
         },
         
         function(error) {
-            $('#modal1').modal('close');
-            $('#modal3').modal('open');
-            console.log("FAILED", error);
+             console.log("FAILED", error);
+             modalClose.style.display = "none";
+            fail.style.display = "block";
+            setTimeout(function() {
+            fail.style.display = "none";
+            }, 5000);
         }
     );
     return false;  // To block from loading a new page

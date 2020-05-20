@@ -38,3 +38,25 @@ main {
     color:aliceblue;
 }
 
+#modal1{
+    
+    background-color:  #00766B;
+    color: aliceblue;
+    width: 40%;
+    height: 60%;
+    text-align: center;
+    
+}
+#modal2, #modal3{
+    display: none;
+    background-color:  #00766B;
+    color: aliceblue;
+    width: 40%;
+    height: 20%;
+    text-align: center;
+
+}
+#modal3{
+    height: 30%;
+}
+
