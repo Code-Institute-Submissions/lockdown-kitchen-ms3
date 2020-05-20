@@ -1,4 +1,4 @@
-var success = document.querySelector(".modal2");
+var success = document.querySelector("#modal2");
 var modalClose = document.querySelector("#modal1");
 
 
@@ -21,7 +21,7 @@ function sendMail(contactForm) {
         
         function(error) {
             $('#modal1').modal('close');
-            $('.modal3').modal('open');
+            $('#modal3').modal('open');
             console.log("FAILED", error);
         }
     );
