@@ -97,6 +97,12 @@ def main_course():
     return render_template('maincourse.html',
                             main_course=mongo.db.main_course.find())
 
+@app.route('/display_recipe/<recipe_id>')
+def display_recipe(recipe_id):
+    the_recipe =  mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    all_categories =  mongo.db.categories.find()
+    return render_template('recipe_page.html', recipe=the_recipe,
+                           categories=all_categories)
 #Host and Port set
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
