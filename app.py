@@ -7,6 +7,7 @@ if path.exists("env.py"):
     import env
 from bson.objectid import ObjectId
 
+
 #Define the app, and set the MONGO_URI
 app = Flask(__name__)
 
@@ -14,10 +15,28 @@ app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 #App's paths, functions helping to let the user "do CRUD":create, retrieve, update, and delete recipes
 mongo = PyMongo(app)
+DB = mongo.db
+
+
 #Homepage
 @app.route('/')
-def index():
-    return render_template('index.html')
+@app.route("/find_recipes", methods=["GET", "POST"])
+def find_recipes():
+    recipes = DB.recipes
+    all_recipes = recipes.find()
+    all_recipes = [item["recipes"] for item in all_recipes]
+
+    search_term = request.form["search"].lower()
+
+    matches = []
+
+    for recipe in all_recipes:
+        if search_term and recipe[0:len(search_term)] == search_term:
+            matches.append(entry)
+
+    return render_template("findrecipes.html",
+                           matches=matches, search_term=search_term)
+
 
 #Find all of the recipes
 @app.route('/get_recipes')
