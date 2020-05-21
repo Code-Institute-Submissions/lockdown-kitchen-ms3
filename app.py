@@ -19,25 +19,25 @@ DB = mongo.db
 
 
 #Homepage
-@app.route('/')
+'''
 @app.route("/find_recipes", methods=["GET", "POST"])
 def find_recipes():
     recipes = DB.recipes
-    all_recipes = recipes.find()
-    all_recipes = [item["recipes"] for item in all_recipes]
+    recipes = recipes.find()
+    recipes = [item[""] for item in recipes]
 
     search_term = request.form["search"].lower()
 
     matches = []
 
-    for recipe in all_recipes:
+    for recipe in recipes:
         if search_term and recipe[0:len(search_term)] == search_term:
             matches.append(entry)
 
     return render_template("findrecipes.html",
                            matches=matches, search_term=search_term)
-
-
+'''
+@app.route('/')
 #Find all of the recipes
 @app.route('/get_recipes')
 def get_recipes():

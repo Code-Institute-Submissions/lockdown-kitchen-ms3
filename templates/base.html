@@ -17,14 +17,29 @@
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <li><a href="#">Home</a></li>
                     <li><a href="{{url_for('get_recipes')}}">All recipes</a></li>
-                    <li><a href="#">Browse by category</a></li>
+                    <li><a class="dropdown-button" href="#" data-activates="dropdown0">Browse by category!</a>
+                    <ul id="dropdown0" class="dropdown-content">
+                        <li><a href="#!">Main Course</a></li>
+                        <li><a href="#!">Soup</a></li>
+                        <li><a href="#!">Bread</a></li>
+                        <li><a href="#!">Bites</a></li>
+                    </ul>
+                    </li>
                     <li><a href="{{url_for('add_recipe')}}">Add My Recipe</a></li>
                    
                 </ul>
                 <ul class="side-nav" id="mobile-demo">
                     <li><a href="#">Home</a></li>
                     <li><a href="{{url_for('get_recipes')}}">All recipes</a></li>
-                    <li><a href="#">Browse by category</a></li>
+                    <li><a class="dropdown-button" href="#" data-activates="dropdown1">Browse by category!</a>
+                    <ul id="dropdown1" class="dropdown-content">
+                        <li><a href="#!">Main Course</a></li>
+                        <li><a href="#!">Soup</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#!">Bread</a></li>
+                        <li><a href="#!">Bites</a></li>
+                    </ul>
+                    </li>
                     <li><a href="{{url_for('add_recipe')}}">Add My Recipe</a></li>
                     
                 </ul>
