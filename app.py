@@ -49,6 +49,7 @@ def add_recipe():
     return render_template('addrecipes.html',
     categories=mongo.db.categories.find())
 
+
 @app.route('/insert_recipe', methods=['POST'])
 def insert_recipe():
     recipes = mongo.db.recipes
@@ -84,6 +85,17 @@ def delete_recipe(recipe_id):
     mongo.db.recipes.remove({'_id': ObjectId(recipe_id)})
     return redirect(url_for('get_recipes'))
 
+@app.route('/get_categories')
+def get_categories():
+    return render_template('categories.html',
+                           categories=mongo.db.categories.find())
+
+
+
+@app.route('/main_course')
+def main_course():
+    return render_template('maincourse.html',
+                            main_course=mongo.db.main_course.find())
 
 #Host and Port set
 if __name__ == '__main__':

@@ -1,0 +1,25 @@
+{% extends 'base.html'%} 
+{% block content %}
+<div class="container-fluid back">
+    <div class="container">
+        <div class="row meals">
+            {% for main_course in categories %}
+            {% if category_name == "Main Course" %}
+            <div class="col s12 m4">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="{{ recipe.image }}">
+                        <span class="card-title"><strong>{{ recipe.title}}</strong></span>
+                        <a href="{{url_for('recipe', meal_id=meal._id)}}" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">info_outline</i></a>
+                    </div>
+                    <div class="card-content">
+                        <p>{{ recipe.description }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

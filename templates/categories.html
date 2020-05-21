@@ -1,17 +1,19 @@
 {% extends 'base.html'%} {% block content %}
 
-<ul id='dropdown1' class='dropdown-content'>
-    <li><a href="#!">Main Course</a></li>
-    <li><a href="#!">Soup</a></li>
-    <li class="divider"></li>
-    <li><a href="#!">Bread</a></li>
-    <li><a href="#!"><i class="material-icons">view_module</i>Bites</a></li>
-</ul>
+<div class="row">
 
+    <h3>Categories</h3>
+    <ul class="collapsible" data-collapsible="accordion">
+        {% for category in categories %}
+        <li>
+        
+                <div class="task_header">
+                    <strong>{{category.category_name}}</strong>
+                </div>
+            
+        </li>
+        {% endfor %}
 
-
-
-
-
-
+    </ul>
+</div>
 {% endblock %}
