@@ -90,11 +90,11 @@ def get_categories():
     return render_template('categories.html',
                            categories=mongo.db.categories.find())
 
-@app.route('/display_categories/<category_id>')
+@app.route('/display_categories/<category_name>')
 def display_categories(category_name):
-    recipes=mongo.db.recipes.find()
-    all_categories = mongo.db.categories.find().sort({category_name })
-    return render_template('displaycategories.html', recipe=the_recipe, recipes = all_recipe,  category=category_name,
+    all_recipe=mongo.db.recipes.find()
+    all_categories = mongo.db.categories.find().sort("category_name", -1)
+    return render_template('displaycategories.html',  recipes = all_recipe, category=category_name,
                            categories=all_categories, )
 
 
