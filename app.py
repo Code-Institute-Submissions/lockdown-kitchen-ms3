@@ -90,16 +90,17 @@ def get_categories():
     return render_template('categories.html',
                            categories=mongo.db.categories.find())
 
+@app.route('/display_categories/<category_id>')
+def display_categories(category_name):
+    recipes=mongo.db.recipes.find()
+    all_categories = mongo.db.categories.find().sort({category_name })
+    return render_template('displaycategories.html', recipe=the_recipe, recipes = all_recipe,  category=category_name,
+                           categories=all_categories, )
 
-
-@app.route('/main_course')
-def main_course():
-    return render_template('maincourse.html',
-                            main_course=mongo.db.main_course.find())
 
 @app.route('/display_recipe/<recipe_id>')
 def display_recipe(recipe_id):
-    the_recipe =  mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    the_recipe =  mongo.db.recipes.find_recipes({"_id": ObjectId(recipe_id)})
     all_categories =  mongo.db.categories.find()
     return render_template('recipe_page.html', recipe=the_recipe,
                            categories=all_categories)
