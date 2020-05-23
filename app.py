@@ -41,7 +41,7 @@ def find_recipes():
 #Find all of the recipes
 @app.route('/get_recipes')
 def get_recipes():
-    all_categories =  mongo.db.categories.find()
+    all_categories = list(mongo.db.categories.find())
     return render_template("recipes.html", categories=all_categories, recipes=mongo.db.recipes.find())
 
 #Add new recipe using a form, submiting it using POST method
