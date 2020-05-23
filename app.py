@@ -100,7 +100,7 @@ def display_categories(category_name):
 
 @app.route('/display_recipe/<recipe_id>')
 def display_recipe(recipe_id):
-    the_recipe =  mongo.db.recipes.find_recipes({"_id": ObjectId(recipe_id)})
+    the_recipe =  mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     all_categories =  mongo.db.categories.find()
     return render_template('recipe_page.html', recipe=the_recipe,
                            categories=all_categories)
