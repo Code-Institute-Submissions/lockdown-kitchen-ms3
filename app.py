@@ -25,15 +25,11 @@ def find_recipes():
     recipes = DB.recipes
     recipes = recipes.find()
     recipes = [item[""] for item in recipes]
-
     search_term = request.form["search"].lower()
-
     matches = []
-
     for recipe in recipes:
         if search_term and recipe[0:len(search_term)] == search_term:
             matches.append(entry)
-
     return render_template("findrecipes.html",
                            matches=matches, search_term=search_term)
 '''
@@ -96,7 +92,7 @@ def display_categories(category_name):
     all_recipe=mongo.db.recipes.find({"category_name": category_name})
     all_categories = mongo.db.categories.find().sort("category_name", -1)
     return render_template('displaycategories.html',  recipes = all_recipe, category=category_name,
-                           categories=all_categories, )
+                           categories=all_categories )
 
 
 @app.route('/display_recipe/<recipe_id>')

@@ -63,6 +63,10 @@ main {
 .card-title{
     color:#00766B;
 }
+.card{
+    border: #00766B solid 0.5rem;
+    border-radius: 0.5rem;
 
+}
 
     
