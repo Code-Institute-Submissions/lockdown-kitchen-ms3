@@ -66,7 +66,13 @@ main {
 .card{
     border: #00766B solid 0.5rem;
     border-radius: 0.5rem;
+    /*height: 47rem;*/
+   
 
 }
+.card-image{
+    height: 30rem;
+}
+
 
     
