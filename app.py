@@ -91,15 +91,15 @@ def get_categories():
 @app.route('/display_categories/<category_name>')
 def display_categories(category_name):
     all_recipe=mongo.db.recipes.find({"category_name": category_name})
-    all_categories = mongo.db.categories.find().sort("category_name", -1)
+    all_categories = list(mongo.db.categories.find())
     return render_template('displaycategories.html',  recipes = all_recipe, category=category_name,
-                           categories=all_categories )
+    categories=all_categories )
 
 
 @app.route('/display_recipe/<recipe_id>')
 def display_recipe(recipe_id):
     the_recipe =  mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
-    all_categories =  mongo.db.categories.find()
+    all_categories = list(mongo.db.categories.find())
     return render_template('recipe_page.html', recipe=the_recipe,
                            categories=all_categories)
 #Host and Port set
