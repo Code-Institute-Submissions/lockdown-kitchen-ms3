@@ -77,4 +77,8 @@ main {
 .category-header{
     font-size: 1.3rem;
 }
+.page-category, .category-name{
+    font-size:1.5rem;
+}
+
     
