@@ -17,9 +17,17 @@ app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 mongo = PyMongo(app)
 DB = mongo.db
 
+@app.route('/')
+#Find all of the recipes
+@app.route('/get_recipes')
+def get_recipes():
+    all_categories = list(mongo.db.categories.find())
+    return render_template("recipes.html", categories=all_categories, recipes=mongo.db.recipes.find())
 
 #Homepage
+
 '''
+beepit ingredients
 @app.route("/find_recipes", methods=["GET", "POST"])
 def find_recipes():
     recipes = DB.recipes
@@ -30,15 +38,12 @@ def find_recipes():
     for recipe in recipes:
         if search_term and recipe[0:len(search_term)] == search_term:
             matches.append(entry)
-    return render_template("findrecipes.html",
+    return render_template("index.html",
                            matches=matches, search_term=search_term)
 '''
-@app.route('/')
-#Find all of the recipes
-@app.route('/get_recipes')
-def get_recipes():
-    all_categories = list(mongo.db.categories.find())
-    return render_template("recipes.html", categories=all_categories, recipes=mongo.db.recipes.find())
+
+
+
 
 #Add new recipe using a form, submiting it using POST method
 @app.route('/add_recipe')
