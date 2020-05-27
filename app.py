@@ -18,31 +18,27 @@ mongo = PyMongo(app)
 DB = mongo.db
 
 @app.route('/')
+#Homepage
+
+@app.route("/find_recipes", methods=["GET", "POST"])
+def find_recipes():
+    recipes = DB.recipes
+    recipes = recipes.find()
+    ingredients = [ingredients[""] for ingredients in recipes]
+    title = [title[""]for title in recipes]
+    search_term = request.form["search"].lower()
+    matches = []
+    for ingredients in recipes:
+        if search_term and recipe[0:len(search_term)] == search_term:
+            matches.append(entry)
+    return render_template("index.html",
+                           matches=matches, search_term=search_term)
+
 #Find all of the recipes
 @app.route('/get_recipes')
 def get_recipes():
     all_categories = list(mongo.db.categories.find())
     return render_template("recipes.html", categories=all_categories, recipes=mongo.db.recipes.find())
-
-#Homepage
-
-'''
-beepit ingredients
-@app.route("/find_recipes", methods=["GET", "POST"])
-def find_recipes():
-    recipes = DB.recipes
-    recipes = recipes.find()
-    recipes = [item[""] for item in recipes]
-    search_term = request.form["search"].lower()
-    matches = []
-    for recipe in recipes:
-        if search_term and recipe[0:len(search_term)] == search_term:
-            matches.append(entry)
-    return render_template("index.html",
-                           matches=matches, search_term=search_term)
-'''
-
-
 
 
 #Add new recipe using a form, submiting it using POST method
