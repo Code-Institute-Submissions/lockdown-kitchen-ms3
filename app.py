@@ -23,8 +23,9 @@ DB = mongo.db
 @app.route("/find_recipes")
 def find_recipes():
     query = request.args.get("search")
+    all_categories = list(mongo.db.categories.find())
     search_term = mongo.db.recipe.find({"ingredients":{ "$regex": query}})
-    return render_template("index.html")
+    return render_template("index.html", categories=all_categories)
 
 
 #Find all of the recipes
