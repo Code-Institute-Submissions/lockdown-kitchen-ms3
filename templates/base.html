@@ -30,14 +30,14 @@
 			<a href="{{url_for('get_recipes')}}" class="brand-logo">Lockdown Kitchen</a>
 			<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i> </a>
 			<ul id="nav-mobile" class="right hide-on-med-and-down">
-				<li><a href="#">Home</a></li>
+				<li><a href="{{url_for('find_recipes')}}">Home</a></li>
 				<li><a href="{{url_for('get_recipes')}}">All recipes</a></li>
 				<li><a class="dropdown-button" href="#" data-activates="dropdown0">Browse by category</a>
 				</li>
 				<li><a href="{{url_for('add_recipe')}}">Add My Recipe</a></li>
 			</ul>
 			<ul class="side-nav" id="mobile-demo">
-				<li><a href="#">Home</a></li>
+				<li><a href="{{url_for('find_recipes')}}">Home</a></li>
 				<li><a href="{{url_for('get_recipes')}}">All recipes</a></li>
 				<li><a class="dropdown-button" href="#" data-activates="dropdown1">Browse by category</a>
 				</li>

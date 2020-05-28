@@ -6,6 +6,8 @@ from flask import Flask, render_template, redirect, request, url_for
 if path.exists("env.py"):
     import env
 from bson.objectid import ObjectId
+import re 
+
 
 
 #Define the app, and set the MONGO_URI
@@ -18,21 +20,12 @@ mongo = PyMongo(app)
 DB = mongo.db
 
 @app.route('/')
-#Homepage
-
-@app.route("/find_recipes", methods=["GET", "POST"])
+@app.route("/find_recipes")
 def find_recipes():
-    recipes = DB.recipes
-    recipes = recipes.find()
-    ingredients = [ingredients[""] for ingredients in recipes]
-    title = [title[""]for title in recipes]
-    search_term = request.form["search"].lower()
-    matches = []
-    for ingredients in recipes:
-        if search_term and recipe[0:len(search_term)] == search_term:
-            matches.append(entry)
-    return render_template("index.html",
-                           matches=matches, search_term=search_term)
+    query = request.args.get("search")
+    search_term = mongo.db.recipe.find({"ingredients":{ "$regex": query}})
+    return render_template("index.html")
+
 
 #Find all of the recipes
 @app.route('/get_recipes')
