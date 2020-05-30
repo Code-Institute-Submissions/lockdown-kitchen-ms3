@@ -1,13 +1,14 @@
 {% extends 'base.html'%}
 {% block content %}
-<div class="container center">
+<div class="container center" id="home">
+<img class="responsive-img" id="logo" src="{{ url_for('static', filename='images/logo_transparent.png') }}">
    <div class="row">
       <div class="col s12 m12">
          <h3 class="header"> Welcome to Lockdown Kitchen! </h3>
          <div class="card">
             <div class="card-stacked">
                <div class="card-content">
-                  <p>Lockdown Kitchen is an online cookbook, where You can find out how to make delicious food without looking for ingredients all over the city. For these yummies You need just a couple of ingredients, so leave the big shopping after the lockdown! If you have a good recipe, show us: You can add, and edit and even delete recipes. <br> Enjoy! </p>
+                  <span id="info">Lockdown Kitchen is an online cookbook, where You can find out how to make delicious food without looking for ingredients all over the city. For these yummies You need just a couple of ingredients, so leave the big shopping after the lockdown! If you have a good recipe, show us: You can add, edit and even delete recipes. <br> Enjoy! </span>
                </div>
                <div class="card-action">
                   <a href="{{url_for('get_recipes')}}">Show me the recipes</a>

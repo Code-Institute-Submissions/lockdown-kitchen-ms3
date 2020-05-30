@@ -21,7 +21,8 @@ DB = mongo.db
 
 @app.route('/')
 def home():
-    return render_template("index.html")
+    all_categories = list(mongo.db.categories.find())
+    return render_template("index.html",categories=all_categories)
 
 @app.route("/find_recipes")
 def find_recipes():

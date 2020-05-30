@@ -84,5 +84,12 @@ main {
 .search-btn{
     margin-bottom:0;
 }
-
-    
+#logo{
+    height: 6.25rem;
+}
+#home{
+    color: #00766B;
+}
+#info{
+    font-size: 1.2rem;
+}
