@@ -81,8 +81,11 @@ main {
     font-size:1.5rem;
 }
 
-.search-btn{
-    margin-bottom:0;
+#submit{
+    background-color:  #00766B;
+    font: aliceblue;
+    position: relative;
+    
 }
 #logo{
     height: 6.25rem;
