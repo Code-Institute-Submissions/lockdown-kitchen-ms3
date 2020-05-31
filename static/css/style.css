@@ -92,7 +92,11 @@ main {
 }
 #home{
     color: #00766B;
+    padding-bottom: 6.25rem;
+   
 }
 #info{
     font-size: 1.2rem;
+    
 }
+
