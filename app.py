@@ -8,9 +8,7 @@ if path.exists("env.py"):
 from bson.objectid import ObjectId
 import re 
 
-
-
-#Define the app, and set the MONGO_URI
+#Define the app, and set the MONGO_URI secret key
 app = Flask(__name__)
 
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
@@ -19,11 +17,13 @@ app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 mongo = PyMongo(app)
 DB = mongo.db
 
+#Homepage with search bar, list of categories returned to provide the dropdown category menu
 @app.route('/')
 def home():
     all_categories = list(mongo.db.categories.find())
     return render_template("index.html",categories=all_categories)
 
+#Search for recipes with regex method, results of the search returned with the for loop in results.html
 @app.route("/find_recipes")
 def find_recipes():
     query = request.args.get("search")
@@ -31,20 +31,19 @@ def find_recipes():
     all_categories = list(mongo.db.categories.find())
     return render_template("results.html", categories=all_categories, search = search_term)
 
-#Find all of the recipes
+#List of the recipes with find() method
 @app.route('/get_recipes')
 def get_recipes():
     all_categories = list(mongo.db.categories.find())
     return render_template("recipes.html", categories=all_categories, recipes=mongo.db.recipes.find())
 
-
 #Add new recipe using a form, submiting it using POST method
+#When the recipe is succesfully added, the user gets redirected to the list of recipes
 @app.route('/add_recipe')
 def add_recipe():
     all_categories = list(mongo.db.categories.find())
     return render_template('addrecipes.html',
     categories=all_categories)
-
 
 @app.route('/insert_recipe', methods=['POST'])
 def insert_recipe():
@@ -81,11 +80,12 @@ def delete_recipe(recipe_id):
     mongo.db.recipes.remove({'_id': ObjectId(recipe_id)})
     return redirect(url_for('get_recipes'))
 
+#Get and display categories, so the user can click on the category_name and the list of the recipes
 @app.route('/get_categories')
 def get_categories():
     return render_template('categories.html',
                            categories=mongo.db.categories.find())
-
+                           
 @app.route('/display_categories/<category_name>')
 def display_categories(category_name):
     all_recipe=mongo.db.recipes.find({"category_name": category_name})
@@ -93,13 +93,14 @@ def display_categories(category_name):
     return render_template('displaycategories.html',  recipes = all_recipe, category=category_name,
                            categories=all_categories, )
 
-
+#Function for displaying the whole content of one recipe card
 @app.route('/display_recipe/<recipe_id>')
 def display_recipe(recipe_id):
     the_recipe =  mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     all_categories = list(mongo.db.categories.find())
     return render_template('recipe_page.html', recipe=the_recipe,
                            categories=all_categories)
+                           
 #Host and Port set
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),

@@ -1,8 +1,10 @@
-<!--Adding recipes by using a form -->
+<!--Adding recipes by using a form, the recipe will be pushed to the all recipes,
+   after submitting, the user will get redirected to All recipes page-->
 {% extends 'base.html'%}
 {% block content %}
 <h3>Share Your Lockdown Recipe</h3>
 <div class="row">
+   <!--Insert_recipe function url linked-->
    <form action="{{ url_for('insert_recipe') }}" method="POST" class="col s12">
       <div class="row">
          <div class="input-field col s12">
@@ -35,7 +37,7 @@
       <div class="row">
          <div class="input-field col s12">
             <i class="material-icons prefix">add_to_photos</i>
-            <!--Select a category with a disabled with instructions-->
+            <!--For loop to render categories, so the user can choose from them-->
             <select id="category" name="category_name">
                <option value="" disabled selected>Choose Category</option>
                {% for cat in categories %}

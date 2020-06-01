@@ -1,6 +1,7 @@
-<!--Editing recipes -->
 {% extends 'base.html'%}
 {% block content %}
+<!--Edit existing recipes, identification provided by passing the recipe's ID
+Existing data about recipe is displayed, so the user can edit a small piece without the obligation to retype the other parts -->
 <h3>Edit this recipe</h3>
 <div class="row">
    <form action="{{ url_for('update_recipe', recipe_id=recipe._id) }}" method="POST" class="col s12">
@@ -38,15 +39,15 @@
             <!--Select a category with a disabled with instructions-->
             <select id="category" name="category_name">
                <option value="" disabled selected>Choose Category</option>
-            <!--If the category match the recipe category name, we display it, if doesn't match the user can choose a new one-->
+               <!--If the category match the recipe category name, we display it, if doesn't match the user can choose a new one-->
                {% for cat in categories %}
-                      {% if cat.category_name == recipe.category_name%}
-                      <option value="{{cat.category_name}}" selected >{{cat.category_name}}</option>
-                      {% else %}
-                       <option value="{{cat.category_name}}">{{cat.category_name}}</option>
-                    {% endif %}
-                  {% endfor %}
-           </select>
+               {% if cat.category_name == recipe.category_name%}
+               <option value="{{cat.category_name}}" selected >{{cat.category_name}}</option>
+               {% else %}
+               <option value="{{cat.category_name}}">{{cat.category_name}}</option>
+               {% endif %}
+               {% endfor %}
+            </select>
             <label>Recipe category</label>
          </div>
          <!-- Submit button to insert the new recipe, and get redirected to the get_recipes page -->

@@ -1,112 +1,109 @@
 <!-- Base document used for following DRY -Dont Repeat Yourself - principle  -->
 <!DOCTYPE html>
 <html>
-
-<head>
-	<title> Lockdown Kitchen </title>
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-	<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
-	<link rel="icon" sizes="192x192" href="{{ url_for('static', filename='images/favicon.png') }}" type="image/x-icon">
-	<link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css" />
-</head>
-<header>
-	<ul id="dropdown0" class="dropdown-content">
-		{%for category in categories %}
-		<li> <a
-				href="{{url_for('display_categories', category_name=category.category_name)}}">{{category.category_name}}</a>
-		</li>
-		{% endfor %}
-	</ul>
-	<ul id="dropdown1" class="dropdown-content">
-		{%for category in categories %}
-		<li> <a
-				href="{{url_for('display_categories', category_name=category.category_name)}}">{{category.category_name}}</a>
-		</li>
-		{% endfor %}
-	</ul>
-	<nav>
-		<div class="nav-wrapper">
-			<a href="{{url_for('home')}}" class="brand-logo">Lockdown Kitchen</a>
-			<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i> </a>
-			<ul id="nav-mobile" class="right hide-on-med-and-down">
-				<li><a href="{{url_for('home')}}">Home</a></li>
-				<li><a href="{{url_for('get_recipes')}}">All recipes</a></li>
-				<li><a class="dropdown-button" href="#" data-activates="dropdown0">Browse by category</a>
-				</li>
-				<li><a href="{{url_for('add_recipe')}}">Add My Recipe</a></li>
-			</ul>
-			<ul class="side-nav" id="mobile-demo">
-				<li><a href="{{url_for('home')}}">Home</a></li>
-				<li><a href="{{url_for('get_recipes')}}">All recipes</a></li>
-				<li><a class="dropdown-button" href="#" data-activates="dropdown1">Browse by category</a>
-				</li>
-				<li><a href="{{url_for('add_recipe')}}">Add My Recipe</a></li>
-			</ul>
-		</div>
-	</nav>
-</header>
-
-<body>
-	<!-- Block content container-->
-	<div class="container">
-		{% block content %} {% endblock %}
-	</div>
-	<footer class="page-footer">
-		<div class="footer-copyright">
-			<div class="container">
-				&copy; Krisztina Szabó
-				<a class="waves-effect waves-light btn-small right  modal-trigger" href="#modal1" id="btn-footer">
-					<i class="material-icons left"> message </i>Send feedback
-				</a>
-				<a href="https://github.com/krisztinatxt" target="_blank" rel="noopener"
-					class="waves-effect waves-light btn-small right" id="btn-footer">
-					<i class="material-icons left"> code </i>Visit My GitHub
-				</a>
-			</div>
-		</div>
-	</footer>
-	<!-- Modal Structure, Form -->
-	<div id="modal1" class="modal">
-		<div class="modal-content">
-			<h4>Send me feedback!</h4>
-			<form onsubmit="return sendMail(this);">
-				<label for="name" class="label-name">Name:</label>
-				<input type="text" name="name" id="name" placeholder="Your name..." required>
-				<label for="email" class="label-email">Email:</label>
-				<input type="email" name="emailaddress" id="emailaddress" placeholder="Your email address..." required>
-				<label for="feedback" class="label-feedback">Feedback:</label>
-				<textarea id="feedback" name="feedback" placeholder="Write your feedback here" required></textarea>
-				<button class="btn waves-effect waves-light feedback_button" type="submit" value = "send" name="action">Submit <i class="material-icons right">send</i> </button>
-			</form>
-		</div>
-	</div>
-
-
-	<!--Succes message modal-->
-	<div id="modal2" class="modal">
-		<div class="modal-content">
-			<h4>Thanks for your feedback!</h4>
-		</div>
-	</div>
-
-	<!--Error message-->
-	<div id="modal3" class="modal">
-		<div class="modal-content">
-			<h4>Something went wrong. Please contact me at andrekrisztina5@gmail.com</h4>
-		</div>
-
-
-	</div>
-	<!--Scripts-->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js"> </script>
-	<script src="{{ url_for('static', filename='js/sendEmail.js') }}"></script>
-	<script src="{{ url_for('static', filename='js/script.js') }}"></script>
-	<script>
-		$(".dropdown-button").dropdown();
-	</script>
-</body>
-
+   <head>
+      <!--Head with title, imported Google fonts, Materialize components, favicon link and my own css file-->
+      <title> Lockdown Kitchen </title>
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+      <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+      <link rel="icon" sizes="192x192" href="{{ url_for('static', filename='images/favicon.png') }}" type="image/x-icon">
+      <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css" />
+   </head>
+   <header>
+      <!--For loop to provide the dropdown menu for categories both for desktop and mobile view-->
+      <ul id="dropdown0" class="dropdown-content">
+         {%for category in categories %}
+         <li> <a
+            href="{{url_for('display_categories', category_name=category.category_name)}}">{{category.category_name}}</a>
+         </li>
+         {% endfor %}
+      </ul>
+      <ul id="dropdown1" class="dropdown-content">
+         {%for category in categories %}
+         <li> <a
+            href="{{url_for('display_categories', category_name=category.category_name)}}">{{category.category_name}}</a>
+         </li>
+         {% endfor %}
+      </ul>
+      <!--Navigation bar as a menu for larger screens and mobile version-->
+      <nav>
+         <div class="nav-wrapper">
+            <a href="{{url_for('home')}}" class="brand-logo">Lockdown Kitchen</a>
+            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i> </a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+               <li><a href="{{url_for('home')}}">Home</a></li>
+               <li><a href="{{url_for('get_recipes')}}">All recipes</a></li>
+               <li><a class="dropdown-button" href="#" data-activates="dropdown0">Browse by category</a>
+               </li>
+               <li><a href="{{url_for('add_recipe')}}">Add My Recipe</a></li>
+            </ul>
+            <ul class="side-nav" id="mobile-demo">
+               <li><a href="{{url_for('home')}}">Home</a></li>
+               <li><a href="{{url_for('get_recipes')}}">All recipes</a></li>
+               <li><a class="dropdown-button" href="#" data-activates="dropdown1">Browse by category</a>
+               </li>
+               <li><a href="{{url_for('add_recipe')}}">Add My Recipe</a></li>
+            </ul>
+         </div>
+      </nav>
+   </header>
+   <body>
+      <!-- Block content container to inject the content of the templates in the Base-->
+      <div class="container">
+         {% block content %} {% endblock %}
+      </div>
+      <!--Footer with copyright, GitHub repository and feedback form-->
+      <footer class="page-footer">
+         <div class="footer-copyright">
+            <div class="container">
+               &copy; Krisztina Szabó
+               <!--Feedback form with succes and error messages-->
+               <a class="waves-effect waves-light btn-small right  modal-trigger" href="#modal1" id="btn-footer">
+               <i class="material-icons left"> message </i>Send feedback
+               </a>
+               <a href="https://github.com/krisztinatxt" target="_blank" rel="noopener"
+                  class="waves-effect waves-light btn-small right" id="btn-footer">
+               <i class="material-icons left"> code </i>Visit My GitHub
+               </a>
+            </div>
+         </div>
+      </footer>
+      <!-- Modal for feedback form asking the user to provide their name, email address and feedback -->
+      <div id="modal1" class="modal">
+         <div class="modal-content">
+            <h4>Send me feedback!</h4>
+            <form onsubmit="return sendMail(this);">
+               <label for="name" class="label-name">Name:</label>
+               <input type="text" name="name" id="name" placeholder="Your name..." required>
+               <label for="email" class="label-email">Email:</label>
+               <input type="email" name="emailaddress" id="emailaddress" placeholder="Your email address..." required>
+               <label for="feedback" class="label-feedback">Feedback:</label>
+               <textarea id="feedback" name="feedback" placeholder="Write your feedback here" required></textarea>
+               <button class="btn waves-effect waves-light feedback_button" type="submit" value = "send" name="action">Submit <i class="material-icons right">send</i> </button>
+            </form>
+         </div>
+      </div>
+      <!--Succes message modal, will pop up when the user succesfully submitted their feedback-->
+      <div id="modal2" class="modal">
+         <div class="modal-content">
+            <h4>Thanks for your feedback!</h4>
+         </div>
+      </div>
+      <!--Error message when the feedback can't be submitted-->
+      <div id="modal3" class="modal">
+         <div class="modal-content">
+            <h4>Something went wrong. Please contact me at andrekrisztina5@gmail.com</h4>
+         </div>
+      </div>
+      <!--Scripts containing Jquery, Materialize JS, EmailJs and my own script-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js"> </script>
+      <script src="{{ url_for('static', filename='js/sendEmail.js') }}"></script>
+      <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+      <script>
+         $(".dropdown-button").dropdown();
+      </script>
+   </body>
 </html>
