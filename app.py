@@ -13,10 +13,9 @@ app = Flask(__name__)
 
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
-#App's paths, functions helping to let the user "do CRUD":create, retrieve, update, and delete recipes
 mongo = PyMongo(app)
 DB = mongo.db
-
+#App's paths, functions helping to let the user "do CRUD":create, retrieve, update, and delete recipes
 #Homepage with search bar, list of categories returned to provide the dropdown category menu
 @app.route('/')
 def home():
@@ -27,7 +26,7 @@ def home():
 @app.route("/find_recipes")
 def find_recipes():
     query = request.args.get("search")
-    search_term = mongo.db.recipes.find({"ingredients": {"$regex": query}}) 
+    search_term = mongo.db.recipes.find({"ingredients": {"$regex": query}})
     all_categories = list(mongo.db.categories.find())
     return render_template("results.html", categories=all_categories, search = search_term)
 
