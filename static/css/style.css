@@ -74,7 +74,8 @@ main {
 	margin-bottom: 0;
 }
 
-#btn-footer {
+#btn-footer, 
+#btn-footer2 {
 	padding-right: 3%;
 	color: aliceblue;
 }
