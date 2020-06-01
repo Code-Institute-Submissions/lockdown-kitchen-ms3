@@ -54,6 +54,7 @@ main {
 .card {
 	border: #00766B solid 0.5rem;
 	border-radius: 0.5rem;
+    height: 50rem;
    
 }
 
@@ -85,6 +86,7 @@ main {
 	padding-bottom: 6.25rem;
 }
 #home_card{
+    height: 40%;
     
 }
 
