@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
-.nav-wrapper {
-	background-color: #00766B;
-}
+/*Robot Slab Google Font imported */
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+
+/*Main styling with font, default color and font color */
 body {
 	display: flex;
 	min-height: 100vh;
@@ -13,40 +13,29 @@ body {
 main {
 	flex: 1 0 auto;
 }
+/*Homepage settings (logo, info card, search bar) */
 
-.page-footer {
+#logo {
+	height: 6.25rem;
+}
+
+#home {
+	color: #00766B;
+	padding-bottom: 6.25rem;
+}
+#home_card{
+    height: 40%;
+    
+}
+
+#info {
+	font-size: 1.2rem;
+}
+.nav-wrapper {
 	background-color: #00766B;
-	color: aliceblue;
-	margin-bottom: 0;
 }
 
-#btn-footer {
-	padding-right: 3%;
-	color: aliceblue;
-}
-
-#modal1 {
-	background-color: #00766B;
-	color: aliceblue;
-	width: 40%;
-	height: 60%;
-	text-align: center;
-}
-
-#modal2,
-#modal3 {
-	display: none;
-	background-color: #00766B;
-	color: aliceblue;
-	width: 40%;
-	height: 20%;
-	text-align: center;
-}
-
-#modal3 {
-	height: 30%;
-}
-
+/*Recipe card styling*/
 .card-title {
 	color: #00766B;
 }
@@ -71,25 +60,46 @@ main {
 	font-size: 1.5rem;
 }
 
+/*Add new recipes submit button */
 #submit {
 	background-color: #00766B;
 	font: aliceblue;
 	position: relative;
 }
+/*Footer and footer's content */
 
-#logo {
-	height: 6.25rem;
-}
-
-#home {
-	color: #00766B;
-	padding-bottom: 6.25rem;
-}
-#home_card{
-    height: 40%;
-    
+.page-footer {
+	background-color: #00766B;
+	color: aliceblue;
+	margin-bottom: 0;
 }
 
-#info {
-	font-size: 1.2rem;
+#btn-footer {
+	padding-right: 3%;
+	color: aliceblue;
 }
+
+/*Feedback form with succes and error messages*/
+
+#modal1 {
+	background-color: #00766B;
+	color: aliceblue;
+	width: 40%;
+	height: 60%;
+	text-align: center;
+}
+
+#modal2,
+#modal3 {
+	display: none;
+	background-color: #00766B;
+	color: aliceblue;
+	width: 40%;
+	height: 20%;
+	text-align: center;
+}
+
+#modal3 {
+	height: 30%;
+}
+
