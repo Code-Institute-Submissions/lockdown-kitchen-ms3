@@ -10,6 +10,7 @@ body {
 	font-family: 'Roboto Slab', serif;
 }
 
+
 main {
 	flex: 1 0 auto;
 }
@@ -22,6 +23,7 @@ main {
 #home {
 	color: #00766B;
 	padding-bottom: 6.25rem;
+    min-height:100vh;
 }
 #home_card{
     height: 40%;
@@ -58,6 +60,11 @@ main {
 .page-category,
 .category-name {
 	font-size: 1.5rem;
+}
+
+#delete{
+    background:red;
+   
 }
 
 /*Add new recipes submit button */
