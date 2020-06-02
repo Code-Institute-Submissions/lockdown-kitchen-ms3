@@ -44,7 +44,6 @@ main {
     min-height: 100vh;
 }
 
-
 /*Recipe card styling*/
 .card-title {
 	color: #00766B;
@@ -58,7 +57,7 @@ main {
 }
 
 .card-image {
-	height: 30rem;
+    height:30rem;
 }
 
 .category-header {

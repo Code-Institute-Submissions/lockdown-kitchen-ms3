@@ -2,6 +2,9 @@
 {% block content %}
 <!-- For loop to display the results for the search
    The structure is very similar to the recipes.html, recipes are loaded as a list of cards -->
+{% if search == None %}
+  <a href="{{url_for('add_recipe')}}">The Link goes here</a>
+{% endif %}
 <div class="container center results">
    <div class="row">
       {% for recipe in search %}
