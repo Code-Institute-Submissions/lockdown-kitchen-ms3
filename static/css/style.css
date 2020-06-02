@@ -36,6 +36,14 @@ main {
 .nav-wrapper {
 	background-color: #00766B;
 }
+/*Stick footer to the bottom*/
+
+.results, 
+.categories,
+.addrecipes {
+    min-height: 100vh;
+}
+
 
 /*Recipe card styling*/
 .card-title {

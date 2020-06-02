@@ -3,6 +3,7 @@
 {% extends 'base.html'%}
 {% block content %}
 <h3>Share Your Lockdown Recipe</h3>
+<div class="container addrecipes">
 <div class="row">
    <!--Insert_recipe function url linked-->
    <form action="{{ url_for('insert_recipe') }}" method="POST" class="col s12">
@@ -54,5 +55,6 @@
          </div>
       </div>
    </form>
+</div>
 </div>
 {% endblock %}
