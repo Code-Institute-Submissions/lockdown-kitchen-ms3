@@ -36,6 +36,9 @@ main {
 .nav-wrapper {
 	background-color: #00766B;
 }
+#search{
+    top:-0.7rem;
+}
 /*Stick footer to the bottom*/
 
 .results, 
