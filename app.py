@@ -20,7 +20,7 @@ DB = mongo.db
 @app.route('/')
 def home():
     all_categories = list(mongo.db.categories.find())
-    return render_template("index.html",categories=all_categories)
+    return render_template("index.html", categories=all_categories)
 
 #Search for recipes with regex method, results of the search returned with the for loop in results.html
 @app.route("/find_recipes")
@@ -28,9 +28,9 @@ def find_recipes():
     query = request.args.get("search")
     search_term = mongo.db.recipes.find({"ingredients": {"$regex": query}})
     search = search_term
+    no_of_docs = mongo.db.recipes.count_documents({"ingredients": {"$regex": query}})
     all_categories = list(mongo.db.categories.find())
-    if search is not None:
-        return render_template("results.html", categories=all_categories, search = search_term)
+    return render_template("results.html", categories=all_categories, search=search_term, no_of_docs = no_of_docs)
 
 #List of the recipes with find() method
 @app.route('/get_recipes')
