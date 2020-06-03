@@ -23,6 +23,7 @@ def home():
     return render_template("index.html", categories=all_categories)
 
 #Search for recipes with regex method, results of the search returned with the for loop in results.html
+#If there is no result, the user can see a message and a link for the Add recipe page
 @app.route("/find_recipes")
 def find_recipes():
     query = request.args.get("search")

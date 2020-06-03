@@ -1,13 +1,15 @@
 {% extends 'base.html'%}
 {% block content %}
-<!-- For loop to display the results for the search
-   The structure is very similar to the recipes.html, recipes are loaded as a list of cards -->
+<!--If statement with number of docs, to check if there is any result,
+ if there is no recipe found for the keyword, the user gets this message-->
 {% if no_of_docs == 0 %}
 <div class="center">
 <h5> No result found...</h5>
 <a href="{{url_for('add_recipe')}}">Share your recipe!</a>
 </div>
 {% endif %}
+<!-- For loop to display the results for the search
+   The structure is very similar to the recipes.html, recipes are loaded as a list of cards -->
 <div class="container center results">
    <div class="row">
       {% for recipe in search %}
