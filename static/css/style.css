@@ -121,3 +121,29 @@ main {
 	height: 30%;
 }
 
+/*==================================================
+=                Media Queries             =
+==================================================*/
+/*** Small mobile devices ***/
+/*** Tested on Moto G4, Galaxy S5 ***/
+
+@media only screen and (min-width: 350px) and (max-width: 769) {
+     .card{
+         height: 55rem;
+     }
+     .card-image{
+        height:35rem;
+    }
+}
+
+
+/***Tested on laptop, laptop with touch ***/
+ @media only screen and (min-width: 770px){
+	.card{
+        height: 60rem;
+    }
+
+    .card-image{
+        height: 40rem;
+    }
+ }
