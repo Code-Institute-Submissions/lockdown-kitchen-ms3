@@ -19,8 +19,8 @@ DB = mongo.db
 #Homepage with search bar, list of categories returned to provide the dropdown category menu
 @app.route('/')
 def home():
-    #all_categories = list(mongo.db.categories.find())
-    return render_template("index.html")
+    all_categories = list(mongo.db.categories.find())
+    return render_template("index.html", categories=all_categories)
 
 #Search for recipes with regex method, results of the search returned with the for loop in results.html
 #If there is no result, the user can see a message and a link for the Add recipe page
@@ -98,10 +98,10 @@ def display_categories(category_name):
 #Function for displaying the whole content of one recipe card
 @app.route('/display_recipe/<recipe_id>')
 def display_recipe(recipe_id):
-    the_recipe =  mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    the_recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     all_categories = list(mongo.db.categories.find())
-    return render_template('recipe_page.html', recipe=the_recipe,
-                           categories=all_categories)
+    ingredients = mongo.db.recipes.ingredients.split(",")
+    return render_template('recipe_page.html', recipes=recipes, recipe=the_recipe, categories=all_categories, ingredients=ingredients)
                            
 #Host and Port set
 if __name__ == '__main__':
