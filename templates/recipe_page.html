@@ -8,11 +8,13 @@
          <!--Card with the recipe's components like title, ingredients, steps, picture and category name-->
          <h4 class="card-title center">{{recipe.title}}</h4>
          <h5> Ingredients: </h5>
-         {% for ingredients in ingredients %}
-         <p> {{ recipe.ingredients }}</p>
-         {% endfor %}
+        <ul>
+        {% for ingredient in ingredients %}
+            <li>{{ ingredient }}</li>
+        {% endfor %}
+        </ul>
          <h5> How to: </h5>
-         <br>{{recipe.how_to}} </p>
+        <p><br>{{recipe.how_to}} </p>
       </div>
       <div class="col md5">
          <img class="responsive-img" src="{{recipe.picture}}">
