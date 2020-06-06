@@ -98,9 +98,8 @@ def display_categories(category_name):
 #Function for displaying the whole content of one recipe card
 @app.route('/display_recipe/<recipe_id>')
 def display_recipe(recipe_id):
-    the_recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    the_recipe["ingredients"]= mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     all_categories = list(mongo.db.categories.find())
-    ingredients = mongo.db.recipes.ingredients.split(",")
     return render_template('recipe_page.html', recipes=recipes, recipe=the_recipe, categories=all_categories, ingredients=ingredients)
                            
 #Host and Port set
