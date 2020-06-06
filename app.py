@@ -19,8 +19,8 @@ DB = mongo.db
 #Homepage with search bar, list of categories returned to provide the dropdown category menu
 @app.route('/')
 def home():
-    all_categories = list(mongo.db.categories.find())
-    return render_template("index.html", categories=all_categories)
+    #all_categories = list(mongo.db.categories.find())
+    return render_template("index.html")
 
 #Search for recipes with regex method, results of the search returned with the for loop in results.html
 #If there is no result, the user can see a message and a link for the Add recipe page
