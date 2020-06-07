@@ -201,6 +201,21 @@ The image, the title and the view recipe anchor tag are all clickable. When the 
 When the user click on the name of the category, they get a list of the recipes in the same category. 
 Links are tested, everything worked.
 
+### Recipe Page
+
+As I mentioned above, when the user click on certain components of the card, will be redirected to the full version of the recipe.
+The page contains:
+- Title of the recipe;
+- List of ingredients formatted with split() method;
+- The recipe's how to;
+- The picture;
+- The category of the recipe;
+- More options with:
+    - Edit 
+    - Delete 
+![EditDelete]( "EditDelete")
+
+
 ### Browse by Category
 
 Contains a dropdown menu with the four categories:
@@ -214,6 +229,17 @@ Navigation works without problem, the sidenav pop up when the window get resized
 ### Add My Recipe
 
 ![AddNew](https://github.com/krisztinatxt/lockdown-kitchen-ms3/blob/master/static/images/addnew.JPG "AddNew")
+
+- Add My Recipe is a form using POST method to add a new recipe to the list.
+- All fields start with a Materialize Icon to ilustrate the point of the information.
+- The placeholders help the user to fill out the form and create a recipe similar to the existing ones.
+- When the recipe is submitted the user will be redirected to All recipes page.
+Add My Recipe page tested, recipe added, user redirected, new recipe visible on the page.
+
+
+
+
+
 
 
 
