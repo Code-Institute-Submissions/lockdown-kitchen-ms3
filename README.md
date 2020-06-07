@@ -80,7 +80,7 @@ Colors I used:
 - ![#00766B](https://placehold.it/15/00766B/000000?text=+) `#00766B - blue, primary color`
 - ![#f0f8ff](https://placehold.it/15/f0f8ff/000000?text=+) `#f0f8ff - aliceblue, secondary color`
 - ![#ffab46](https://placehold.it/15/ffab46/000000?text=+) `#ffab46 - orange for category name and browse recipe`
-- ![#ff0000](https://placehold.it/15/#ff0000/000000?text=+) `#ff0000 -red, used once, at the Delete button`
+- ![#ff0000](https://placehold.it/15/#ff0000/000000?text=+) `#ff0000 - red used once at the Delete button`
 
 #### Fonts
 
@@ -95,6 +95,7 @@ I made wireframes for each page of the site from three different type of devices
 1. [Desktop](https://github.com/krisztinatxt/lockdown-kitchen-ms3/tree/master/wireframes/laptop)
 2. [Tablet](https://github.com/krisztinatxt/lockdown-kitchen-ms3/tree/master/wireframes/tablet)
 3. [Mobile](https://github.com/krisztinatxt/lockdown-kitchen-ms3/tree/master/wireframes/mobile)
+
 The implementation ended up slightly different.
 
 ## Features
@@ -129,6 +130,7 @@ The implementation ended up slightly different.
 #### Send feedback
 
 - in the footer the user can find a feedback form which allows them to send their bug report, so I can fix them as fast as possible.
+- to get the feedback I used EmailJS. 
 - after submitting the feedback, they get an success or an error message depending on the successfulness of the action.
 - messages are set with timeOut. 
 
@@ -138,6 +140,30 @@ The implementation ended up slightly different.
 - When the user can create a profile, I would like to build some other features like _Add to your favorites_ or _Share this recipe_.
 
 ## Testing
+
+### Homepage
+
+When You open the Lockdown Kitchen, on the homepage you can see some re-entrant component of the app which you can find on each page:
+- the navigation bar with the name of the app, and the menu.
+- the footer with the copyright, my GitHub profile and the Feedback form.
+
+#### Navigation
+
+On the navigation bar You can find the name of the site. If you click on it, it always leads you to the homepage.
+The menu consists four component:
+1. Home: it leads You to the index.html.
+2. All recipes: it loads all of the recipes as a list of cards.
+3. Browse by categories: a dropdown menu containing the categories of the recipes.
+4. Add My Recipe: a form with the components of the recipe and placeholders to help the user to fill it out.
+
+All links of the navigation bar are provided by using Jinja templating. All of the link work, they load fast.
+When you are browsing from small devices, the navigation bar transform to a collapsable side navigation to make the site easy to use. 
+
+![SideNav]( "SideNav")
+
+#### Footer
+
+
 
 ## Deployment
 
