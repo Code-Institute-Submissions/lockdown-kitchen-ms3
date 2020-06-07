@@ -92,6 +92,8 @@
 
 - [JSHint](https://jshint.com/);
 
+- [PythonCodeChecker](https://extendsclass.com/python-tester.html);
+
 - [Favicon](https://www.favicon-generator.org/);
 
 - [ColorSpace](https://mycolor.space/);
