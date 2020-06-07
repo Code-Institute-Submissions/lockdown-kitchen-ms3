@@ -156,12 +156,64 @@ The menu consists four component:
 3. Browse by categories: a dropdown menu containing the categories of the recipes.
 4. Add My Recipe: a form with the components of the recipe and placeholders to help the user to fill it out.
 
-All links of the navigation bar are provided by using Jinja templating. All of the link work, they load fast.
+All links of the navigation bar are provided by using Jinja templating. All of the links work, they load fast.
 When you are browsing from small devices, the navigation bar transform to a collapsable side navigation to make the site easy to use. 
 
 ![SideNav](https://github.com/krisztinatxt/lockdown-kitchen-ms3/blob/master/static/images/sidenav.JPG "SideNav")
 
 #### Footer
+
+- contains the developer's name, her GitHub account and a Feedback form.
+- the GitHub page opens in a new tab, using `target:"_blank"` and `rel="noopener"` attribute. 
+- the Feedback Form is a modal with three `required` fields and a submit button:
+    - Name;
+    - Email Address;
+    - Feedback.
+- when the user submitted their feedback they will get a success or an error message both with timeOut. 
+    - Form is tested from multiple devices, message sent to the developer's mailbox, success message received; 
+    - I deleted a letter from the emailjs ID to test the error message, also works well.
+
+#### Logo
+
+The logo is positioned to the center of the homepage. The picture is responsive. You can find the logo also as the Favicon of the page.
+
+#### Info box
+
+When the user lands to the homepage, they can find a card with the description of the cook book.
+At the bottom of the box you can find a link to the list of the recipes. The link is tested, works without problem.
+
+#### Searchbar
+
+The user can search for recipes based on what do they have at home. The search is build with regex method.
+When the search was successfull, a list of recipes will load, when there are no results for the keyword, the user get redirected to an error page with two links:
+1. one to lead them the Add My Recipe page,
+2. one to lead them to All Recipes page. 
+Links and search are tested, both working correctly. 
+
+### All Recipes
+
+This page is a list of all recipes of the database. Recipes are stored in cards with this structure:
+- Recipe Image provided by an URL;
+- Recipe Title;
+- View Recipe;
+- Category.
+The image, the title and the view recipe anchor tag are all clickable. When the user click at any of them, the full page of the respective recipe loads.
+When the user click on the name of the category, they get a list of the recipes in the same category. 
+Links are tested, everything worked.
+
+### Browse by Category
+
+Contains a dropdown menu with the four categories:
+1. Main Course;
+2. Soup;
+3. Bites;
+4. Bread.
+
+Navigation works without problem, the sidenav pop up when the window get resized. 
+
+### Add My Recipe
+
+![AddNew]( "AddNew")
 
 
 
