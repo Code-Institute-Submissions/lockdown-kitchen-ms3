@@ -159,7 +159,7 @@ The menu consists four component:
 All links of the navigation bar are provided by using Jinja templating. All of the link work, they load fast.
 When you are browsing from small devices, the navigation bar transform to a collapsable side navigation to make the site easy to use. 
 
-![SideNav]( "SideNav")
+![SideNav](https://github.com/krisztinatxt/lockdown-kitchen-ms3/blob/master/static/images/sidenav.JPG "SideNav")
 
 #### Footer
 
