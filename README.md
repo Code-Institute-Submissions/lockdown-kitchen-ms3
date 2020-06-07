@@ -80,7 +80,7 @@ Colors I used:
 - ![#00766B](https://placehold.it/15/00766B/000000?text=+) `#00766B - blue, primary color`
 - ![#f0f8ff](https://placehold.it/15/f0f8ff/000000?text=+) `#f0f8ff - aliceblue, secondary color`
 - ![#ffab46](https://placehold.it/15/ffab46/000000?text=+) `#ffab46 - orange for category name and browse recipe`
-- ![#ff0000](https://placehold.it/15/#ff0000/000000?text=+) `##ff0000 -red, used once, at the Delete button`
+- ![#ff0000](https://placehold.it/15/#ff0000/000000?text=+) `#ff0000 -red, used once, at the Delete button`
 
 #### Fonts
 
