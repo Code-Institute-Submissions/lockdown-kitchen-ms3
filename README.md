@@ -90,13 +90,52 @@ The font I selected to this page is Roboto Slab from [GoogleFonts](https://fonts
 
 ### Wireframes
 
-
+I created my wireframes during the Scope Plane of this project. 
+I made wireframes for each page of the site from three different type of devices:
+1. [Desktop](https://github.com/krisztinatxt/lockdown-kitchen-ms3/tree/master/wireframes/laptop)
+2. [Tablet](https://github.com/krisztinatxt/lockdown-kitchen-ms3/tree/master/wireframes/tablet)
+3. [Mobile](https://github.com/krisztinatxt/lockdown-kitchen-ms3/tree/master/wireframes/mobile)
+The implementation ended up slightly different.
 
 ## Features
 
 ### Existing Features
 
+#### Search recipes
+
+- the user can search for recipes sorting the results by ingredients.
+- if there are no results found for the keyword, the user can quickly add a new recipe, or browse for recipes.
+
+#### Get all recipes
+
+- the user can reach the list of all recipes on one page, so if they are clueless, they can simply browse.
+
+#### Sort recipes
+
+- the user can easily sort recipes by categories from the menu or from the recipe card itself.
+
+#### Edit, Update and delete recipes
+
+- when the user clicks on the detailed recipe page, at the bottom, they can see a dropdown menu with More options, where they can choose between editing or deleting the recipe.
+- if the user choose to edit the recipe, it will pop up a form with the data of the selected recipe in an editable version.
+- by hitting the delete button, the recipe will be removed from the database.
+
+#### Add new recipe
+
+- the user can add a new recipe by using a form.
+- the placeholders set in the form help the user how to fill it out.
+- a dropdown menu contains the categories, so they can easily choose one.
+
+#### Send feedback
+
+- in the footer the user can find a feedback form which allows them to send their bug report, so I can fix them as fast as possible.
+- after submitting the feedback, they get an success or an error message depending on the successfulness of the action.
+- messages are set with timeOut. 
+
 ### Features Left to Implement
+
+- As we haven't learnt yet, and it's not part of the requirements I didn't implement authentication, but in the future I would like to add to this site.
+- When the user can create a profile, I would like to build some other features like _Add to your favorites_ or _Share this recipe_.
 
 ## Testing
 
