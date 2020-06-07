@@ -213,7 +213,8 @@ The page contains:
 - More options with:
     - Edit 
     - Delete 
-![EditDelete]( "EditDelete")
+    
+![EditDelete](https://github.com/krisztinatxt/lockdown-kitchen-ms3/blob/master/static/images/editdelete.JPG "EditDelete")
 
 
 ### Browse by Category
