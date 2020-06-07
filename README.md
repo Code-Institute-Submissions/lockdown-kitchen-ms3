@@ -213,9 +213,13 @@ The page contains:
 - More options with:
     - Edit 
     - Delete 
-    
+
 ![EditDelete](https://github.com/krisztinatxt/lockdown-kitchen-ms3/blob/master/static/images/editdelete.JPG "EditDelete")
 
+Both function tested:
+1. When the user click on the edit, they can see the recipe's form in an editable version.
+When the modification is submitted, the recipe will be updated, and the user will be redirected to the All recipes page.
+2. When the user click on the Delete button, the selected recipe will be removed from the database, the page of All recipes loads automatically.
 
 ### Browse by Category
 
@@ -237,12 +241,34 @@ Navigation works without problem, the sidenav pop up when the window get resized
 - When the recipe is submitted the user will be redirected to All recipes page.
 Add My Recipe page tested, recipe added, user redirected, new recipe visible on the page.
 
+All of the codes are validated and beatufied.
 
+- [HTMLValidation](https://validator.w3.org/):
+    - Unfortunatelly the HTML validator doesn't understand the Jinja templating syntax, so I got a bunch of errors because of this.
+    No other error found.
+- [CSSValidation](https://jigsaw.w3.org/css-validator/): 
+    - No error found, valid.
+- [JavaScript Validation](https://esprima.org/demo/validate.html): 
+    - No error found, code is syntactically valid.
+- [PythonCodeChecker](https://extendsclass.com/python-tester.html):
+    - No syntax errors detected.
 
+### Compatibility
 
+The site compatibility was checked with devtools, the AmIresponsive site, and also tested by friend from different devices and browsers.
 
-
-
+The site is responsive when you are browsing with:
+    - [x] Google Chrome.
+    - [x] Mozilla Firefox.
+    - [x] Opera.  
+Tested devices:
+- [x] laptop, laptop with touch (width 1440px);
+- [x] Moto G4;
+- [x] Galaxy S5;
+- [x] Pixel2, Pixel 2XL;
+- [x] Iphone 5/SE, Iphone 6/7/8;
+- [x] Iphone 6/7/8 Plus, IphoneX;
+- [x] Ipad and Ipad Pro.
 
 ## Deployment
 
