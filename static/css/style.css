@@ -1,4 +1,4 @@
-/*Robot Slab Google Font imported */
+/*Roboto Slab Google Font imported */
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
 
@@ -81,11 +81,16 @@ main {
 }
 
 #delete {
-	background: red;
+	background: #ff0000;
 }
 
 
-/*Add new recipes submit button */
+/*Add new recipes title and submit button */
+
+#addnew{
+    color: #00766B;
+
+}
 
 #submit {
 	background-color: #00766B;

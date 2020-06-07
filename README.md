@@ -45,6 +45,7 @@ The target audience is people around age 18-40, preferring to reach out online r
 As a User I would like to:
 
  - [x] easily acces recipes from different kind of devices.
+ - [x] information I am presented with to be positioned in a way that is easy for me to navigate and find things.
  - [x] browse recipes by categories.
  - [x] find recipes by ingredients I have at home.
  - [x] share recipes by adding them to database.
@@ -56,13 +57,38 @@ As a User I would like to:
  
 ### Developer Goals
 
+* Provide a nice, easy to use online cook book where the user can create, edit, delete recipes, and filter them by categories and ingredients.
+* Learn by practice about databases, Jinja templating, Materialize, and how to use Python with JavaScript.
+* Get an insight into Heroku's platform.
+
 ### Design
+
+To make an integrated design for this site, I used Materializecss, and Materialize Icons.
+The cards with borders, the logo with angled forms and locked dishes are the reflection of the "lockdown feeling".
+The best-used components are cards. I choosed cards as container of the infos, recipes, and detailed descriptions because the structure of a card helps me to organize the information in a user-friendly way.
+For providing feedback and adding recipe I used forms with simply put placeholders.
 
 #### Color Scheme
 
+To find out, what colors would match with the cookbook's feeling, I used [ColorSpace](https://mycolor.space/).
+I also used [Eye Dropper Chrome Extension](https://chrome.google.com/webstore/detail/eye-dropper/hmdcmlfkchdmnmnmheododdhjedfccka) to make sure that colors on my page are consistent.
+The two most important colors are blue and aliceblue (almost white). To make the site easy to read, I used these two colors for almost everything.
+For Categories and Browse recipes link I used orange. At the Delete button I set red background color as a convention. 
+
+Colors I used: 
+
+- ![#00766B](https://placehold.it/15/00766B/000000?text=+) `#00766B - blue, primary color`
+- ![#f0f8ff](https://placehold.it/15/f0f8ff/000000?text=+) `#f0f8ff - aliceblue, secondary color`
+- ![#ffab46](https://placehold.it/15/ffab46/000000?text=+) `#ffab46 - orange for category name and browse recipe`
+- ![#ff0000](https://placehold.it/15/#ff0000/000000?text=+) `##ff0000 -red, used once, at the Delete button`
+
 #### Fonts
 
+The font I selected to this page is Roboto Slab from [GoogleFonts](https://fonts.google.com/), because it fits perfectly to playful and clear-out theme of the site.
+
 ### Wireframes
+
+
 
 ## Features
 
