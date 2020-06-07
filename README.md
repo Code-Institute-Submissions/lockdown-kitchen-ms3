@@ -35,6 +35,11 @@ Lockdown Kitchen is an online cookbook, where the user can browse, add, edit and
 
 ### Project Goals
 
+Lockdown Kitchen is part of my Code Institute Full Stack Software Development studies, the Data Centric Development module. The scope for this milestone project is to "Create a web application that allows users to store and easily access cooking recipes", using the CRUD operations of Create, Read, Update, and Delete for their recipes.
+Lockdown Kitchen is for people who are working from home or spending most of their time at home during the quarantine ordered because of the pandemic, but they want to cook or bake something easy and tasty from a couple of ingredients.
+
+
+
 
 
 ### User Stories
