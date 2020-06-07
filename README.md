@@ -213,7 +213,7 @@ Navigation works without problem, the sidenav pop up when the window get resized
 
 ### Add My Recipe
 
-![AddNew]( "AddNew")
+![AddNew](https://github.com/krisztinatxt/lockdown-kitchen-ms3/blob/master/static/images/addnew.JPG "AddNew")
 
 
 
