@@ -84,6 +84,8 @@ Colors I used:
 
 #### Fonts
 
+![Welcometo](https://github.com/krisztinatxt/lockdown-kitchen-ms3/blob/master/static/images/welcomto.JPG "Fonts")
+
 The font I selected to this page is Roboto Slab from [GoogleFonts](https://fonts.google.com/), because it fits perfectly to playful and clear-out theme of the site.
 
 ### Wireframes
