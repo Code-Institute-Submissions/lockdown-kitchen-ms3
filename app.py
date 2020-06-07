@@ -96,6 +96,7 @@ def display_categories(category_name):
                            categories=all_categories, )
 
 #Function for displaying the whole content of one recipe card
+#Base of split() method from here: https://www.w3schools.com/python/ref_string_split.asp
 @app.route('/display_recipe/<recipe_id>')
 def display_recipe(recipe_id):
     the_recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
