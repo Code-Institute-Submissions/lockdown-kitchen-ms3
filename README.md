@@ -35,6 +35,8 @@ Lockdown Kitchen is an online cookbook, where the user can browse, add, edit and
 
 ### Project Goals
 
+
+
 ### User Stories
 
 ### Developer Goals
@@ -112,6 +114,12 @@ Lockdown Kitchen is an online cookbook, where the user can browse, add, edit and
 - [GoogleFonts](https://fonts.google.com/);
 
 - [AmIResponsive](http://ami.responsivedesign.is/);
+
+- [Flask](https://flask.palletsprojects.com/en/1.1.x/);
+
+- [Jinja](https://jinja.palletsprojects.com/en/2.10.x/);
+
+- [PyMongo](https://pymongo.readthedocs.io/en/stable/)
 
 ## Credits
 

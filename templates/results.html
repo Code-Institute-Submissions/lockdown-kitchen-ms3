@@ -5,7 +5,9 @@
 {% if no_of_docs == 0 %}
 <div class="center">
 <h5> No result found...</h5>
-<a href="{{url_for('add_recipe')}}">Share your recipe!</a>
+<a href="{{url_for('add_recipe')}}">Share your recipe...</a>
+<br>
+<a href="{{url_for('get_recipes')}}">or browse recipes!</a>
 </div>
 {% endif %}
 <!-- For loop to display the results for the search
