@@ -148,9 +148,13 @@ The implementation ended up slightly different.
 
 When You open the Lockdown Kitchen, on the homepage you can see some re-entrant component of the app which you can find on each page:
 
-- the navigation bar with the name of the app, and the menu.
+- the navigation bar with the name of the app, and the menu;
 
-- the footer with the copyright, my GitHub profile and the Feedback form.
+- the footer with the copyright, my GitHub profile and the Feedback form;
+
+- the favicon of the page;
+
+- the unique title of the page provided by using `block title`.
 
 #### Navigation
 

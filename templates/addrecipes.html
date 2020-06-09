@@ -2,6 +2,8 @@
    after submitting, the user will get redirected to All recipes page-->
 {% extends 'base.html'%}
 {% block content %}
+<!--Block title to achieve different titles on different pages-->
+<title> {% block title %}New Recipe{% endblock %} </title>
 <h3 id="addnew">Share Your Lockdown Recipe</h3>
 <div class="container addrecipes">
 <div class="row">

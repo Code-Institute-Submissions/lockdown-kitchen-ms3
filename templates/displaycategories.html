@@ -1,5 +1,7 @@
 {% extends 'base.html'%}
 {% block content %}
+<!--Block title to achieve different titles on different pages-->
+<title> {% block title %}Categories{% endblock %} </title>
 <!--Display choosen category, and the recipes in that category by it's name using the recipe's id using cards
 To view the full recipe, the user has to click on the View recipe button-->
 <div class="container center categories">

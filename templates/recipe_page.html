@@ -1,6 +1,7 @@
 <!-- Structure of the recipes using templates -->
 {% extends 'base.html'%}
 {% block content %}
+<title> {% block title %} {{recipe.title}} {% endblock %} </title>
 <!--When the user clicks on the recipe, this page will be loaded to see the full recipe-->
 <div class="container recipe_one">
    <div class="row-featurette">
