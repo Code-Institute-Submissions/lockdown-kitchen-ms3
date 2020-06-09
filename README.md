@@ -442,6 +442,7 @@ All text was written by me. The recipes are from [BBCGoodFood](https://www.bbcgo
 
 - To create a logo I used [HatchFul](https://hatchful.shopify.com/).
 - To convert the logo to a favicon, I used [Favicon](https://favicon.io/).
+- The picture for the 404 error message is from [IMGBIN](https://imgbin.com/)
 
 ### Code
 
