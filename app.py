@@ -39,16 +39,19 @@ def find_recipes():
     no_of_docs = mongo.db.recipes.count_documents(
         {"ingredients": {"$regex": query}})
     all_categories = list(mongo.db.categories.find())
-return render_template("results.html", categories=all_categories,
-search=search_term, no_of_docs=no_of_docs)
+    return render_template(
+        "results.html",
+        categories=all_categories,
+        search=search_term, no_of_docs=no_of_docs)
 
 
 @app.route('/get_recipes')
 def get_recipes():
     # List of the recipes with find() method
     all_categories = list(mongo.db.categories.find())
-    return render_template("recipes.html",
-    categories=all_categories, recipes=mongo.db.recipes.find())
+    return render_template(
+        "recipes.html",
+        categories=all_categories, recipes=mongo.db.recipes.find())
 
 
 @app.route('/add_recipe')
@@ -57,8 +60,9 @@ def add_recipe():
     When the recipe is succesfully added,
     the user gets redirected to the list of recipes'''
     all_categories = list(mongo.db.categories.find())
-    return render_template('addrecipes.html',
-    categories=all_categories)
+    return render_template(
+        'addrecipes.html',
+        categories=all_categories)
 
 
 @app.route('/insert_recipe', methods=['POST'])
@@ -82,49 +86,53 @@ def update_recipe(recipe_id):
     # Update the article after editing it using JSON
     recipes = mongo.db.recipes
     recipes.update({'_id': ObjectId(recipe_id)}, {
-        'title':request.form.get('title'),
-        'ingredients':request.form.get('ingredients'),
+        'title': request.form.get('title'),
+        'ingredients': request.form.get('ingredients'),
         'how_to': request.form.get('how_to'),
         'category_name': request.form.get('category_name'),
-        'picture':request.form.get('picture')
-})
-#When the recipe is updated, redirect the user to the list of recipes
+        'picture': request.form.get('picture')})
+# When the recipe is updated, redirect the user to the list of recipes
     return redirect(url_for('get_recipes'))
 
 
 @app.route('/delete_recipe/<recipe_id>')
 def delete_recipe(recipe_id):
-#Delete recipe selected by its ID then redirect the user to the list of recipes
+    ''' Delete recipe selected by its ID
+    then redirect the user to the list of recipes'''
     mongo.db.recipes.remove({'_id': ObjectId(recipe_id)})
     return redirect(url_for('get_recipes'))
 
 
 @app.route('/get_categories')
 def get_categories():
-#Get and display categories, so the user can click on the category_name and the list of the recipes
+    '''  Get and display categories, so the user can click on the category_name
+    and the list of the recipes'''
     return render_template('categories.html',
                            categories=mongo.db.categories.find())
-                           
+
+
 @app.route('/display_categories/<category_name>')
 def display_categories(category_name):
-    all_recipe=mongo.db.recipes.find({"category_name": category_name})
+    all_recipe = mongo.db.recipes.find({"category_name": category_name})
     all_categories = list(mongo.db.categories.find())
-    return render_template('displaycategories.html',  recipes = all_recipe, category=category_name,
-                           categories=all_categories, )
+    return render_template(
+        'displaycategories.html',
+        recipes=all_recipe, category=category_name,
+        categories=all_categories)
 
 
 @app.route('/display_recipe/<recipe_id>')
 def display_recipe(recipe_id):
-'''Function for displaying the whole content of one recipe card
-Base of split() method from here: https://www.w3schools.com/python/ref_string_split.asp'''
+    '''Function for displaying the whole content of one recipe card
+    Base of split() method from here:
+    https://www.w3schools.com/python/ref_string_split.asp'''
     the_recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     ingredients = the_recipe["ingredients"].split(",")
     all_categories = list(mongo.db.categories.find())
-    return render_template('recipe_page.html', recipe=the_recipe, categories=all_categories, ingredients=ingredients)
-                           
-#Host,Port and Debug set
+    return render_template(
+        'recipe_page.html', recipe=the_recipe,
+        categories=all_categories, ingredients=ingredients)
+
+# Host,Port and Debug set
 if __name__ == '__main__':
-    app.run(host=os.environ.get('IP'),
-    port = int(os.environ.get('PORT')),
-    debug=True)
-    
+    app.run(host=os.getenv('IP'), port=os.getenv('PORT'), debug=True)
