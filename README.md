@@ -208,7 +208,7 @@ Links and search are tested, both working correctly.
 
 ### All Recipes
 
-This page is a list of all recipes of the database. Recipes are stored in cards with this structure:
+This page contains a search bar to help the user to find what are they exactly looking for, and a list of all recipes of the database. Recipes are stored in cards with this structure:
 
 - Recipe Image provided by an URL;
 
