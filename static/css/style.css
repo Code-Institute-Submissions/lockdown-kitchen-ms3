@@ -55,7 +55,13 @@ main {
 }
 
 
-/*Recipe card styling*/
+/*Recipe cards styling*/
+
+#search_recipes{
+    padding-bottom:3.5rem;
+    padding-top:3.5rem;
+
+}
 
 .card-title {
 	color: #00766B;

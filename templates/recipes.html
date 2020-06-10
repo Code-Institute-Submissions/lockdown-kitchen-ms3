@@ -4,6 +4,27 @@
 <title> {% block title %}Recipes{% endblock %} </title>
 <!-- For loop rendering the data provided -->
 <div class="container center">
+<!--Search bar with a submit button-->
+   <div class="row center" id="search_recipes">
+      <div class="searchbar col m12 s12">
+         <nav>
+            <div class="nav-wrapper">
+               <form action="{{url_for('find_recipes')}}">
+                  <div class="input-field">
+                     <input id="search0" type="search" name="search" required>
+                     <label class="label-icon" for="search" id="search">
+                     <i class="material-icons">search</i></label>
+                     <i class="material-icons">close</i>
+                  </div>
+                  <div>
+                     <button class="btn waves-effect waves-light" id="submit" type="submit" name="action">Search
+                     </button>
+                  </div>
+               </form>
+            </div>
+         </nav>
+      </div>
+   </div>
    <div class="row">
       {% for recipe in recipes %}
       <div class="recipe-publish col m4 s12">
