@@ -58,16 +58,17 @@ main {
 
 .card-title {
 	color: #00766B;
+    padding-top:1rem;
 }
 
 .card {
 	border: #00766B solid 0.5rem;
 	border-radius: 0.5rem;
-	height: 50rem;
+	height: 38rem;
 }
 
 .card-image {
-	height: 30rem;
+	height: 45%;
 }
 
 .category-header {
@@ -82,7 +83,9 @@ main {
 #delete {
 	background: #ff0000;
 }
-
+#category{
+    padding-bottom:0.5rem;
+}
 
 /*Add new recipes title and submit button */
 
@@ -154,7 +157,7 @@ main {
 
 /*** Tested on Moto G4, Galaxy S5, Pixel2, Pixel 2XL, Iphone 5/SE, Iphone 6/7/8, Iphone 6/7/8 Plus, IphoneX, Ipad and Ipad Pro ***/
 
-@media only screen and (min-width: 350px) and (max-width: 769px) {
+/***@media only screen and (min-width: 350px) and (max-width: 769px) {
 	.card {
 		height: 55rem;
 	}
@@ -166,7 +169,7 @@ main {
 
 /***Tested on laptop, laptop with touch ***/
 
-@media only screen and (min-width: 770px) {
+/**@media only screen and (min-width: 770px) {
 	.card {
 		height: 60rem;
 	}

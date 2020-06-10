@@ -6,7 +6,7 @@
 <div class="container center">
    <div class="row">
       {% for recipe in recipes %}
-      <div class="recipe-publish col m6 s12">
+      <div class="recipe-publish col m4 s12">
          <!--Recipes card containing the basic informations about the recipe, and the link the full version
             To offer better user experience, the picture and the title is also clickable and redirects to the same page as View recipe link-->
          <div class="card">
@@ -21,7 +21,7 @@
                </a>
                <a href="{{url_for('display_recipe', recipe_id=recipe._id)}}" class="waves-effect waves-light"> View Recipe</a>
             </div>
-            <div class="card-action">
+            <div class="card-action" id="category">
                <h6 class="category-header"> Category: </h6>
                <a href="{{url_for('display_categories', category_name= recipe.category_name)}}">{{recipe.category_name}}</a>  
             </div>
