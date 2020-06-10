@@ -75,7 +75,7 @@ main {
 }
 
 .card-image {
-    max-height:45%;
+    max-height:15rem;
 }
 
 .category-header {
@@ -125,7 +125,6 @@ main {
 #modal1 {
 	background-color: #00766B;
 	color: #f0f8ff;
-	;
 	width: 40%;
 	height: 60%;
 	text-align: center;
@@ -166,8 +165,8 @@ main {
 		height: 45rem;
 	}
 	#imagerecipe {
-		height: 22%;
-	}
+        max-height:15rem;
+    }
 	#titlerecipe {
 		padding-top: 16rem;
 	}
@@ -181,7 +180,7 @@ main {
 		height: 40.5rem;
 	}
 	#imagerecipe {
-		height: 15%;
+        max-height:6rem;
 	}
 	#titlerecipe {
 		padding-top: 15rem;
@@ -198,5 +197,8 @@ main {
 	#titlerecipe {
 		font-size: 1.3rem;
         padding-top: 3rem;
+	}
+    #imagerecipe {
+        max-height:17rem;
 	}
 }
