@@ -75,7 +75,7 @@ main {
 }
 
 .card-image {
-	height: 45%;
+    max-height:45%;
 }
 
 .category-header {
