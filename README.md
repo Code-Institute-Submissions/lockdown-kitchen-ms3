@@ -6,7 +6,7 @@
 
 Lockdown Kitchen is an online cookbook, where the user can browse, add, edit and delete recipes. 1. These recipes are lockdown-friendly, because there are just a couple of ingredients needed, so they are easy to make. No one has to go out for shopping in order to eat something tasty.
 
-![AmIresponsive](https://github.com/krisztinatxt/lockdown-kitchen-ms3/blob/master/static/images/amiresponsive.JPG "Responsive")
+![AmIresponsive](https://github.com/krisztinatxt/lockdown-kitchen-ms3/blob/master/static/images/amiresponsiveall.JPG "Responsive")
 
 ## Table of Contents
 
