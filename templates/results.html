@@ -22,15 +22,15 @@
    <div class="row center">
       {% for recipe in search %}
       <div class="recipe-publish col m4 s12">
-         <div class="card">
-            <div class="card-image">
+         <div class="card" id="recipecard">
+            <div class="card-image" id="imagerecipe">
                <a href="{{url_for('display_recipe', recipe_id=recipe._id)}}">
                <img alt="picture" src="{{recipe.picture}}"> 
                </a> 
             </div>
             <div class="card-content">
                <a href="{{url_for('display_recipe', recipe_id=recipe._id)}}">
-               <span class="card-title">{{recipe.title}}</span>
+               <span class="card-title" id="titlerecipe">{{recipe.title}}</span>
                </a>
                <a href="{{url_for('display_recipe', recipe_id=recipe._id)}}" class="waves-effect waves-light"> View Recipe</a>
             </div>

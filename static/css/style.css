@@ -54,24 +54,18 @@ main {
 	min-height: 100vh;
 }
 
+
 /*Recipe card styling*/
 
 .card-title {
 	color: #00766B;
-    padding-top:1rem;
-}
-
-#card-main{
-    width: 15rem;
-    height: 42rem;
-    
+	padding-top: 1.3rem;
 }
 
 .card {
 	border: #00766B solid 0.5rem;
 	border-radius: 0.5rem;
-    height: 39rem;
-	
+	height: 40rem;
 }
 
 .card-image {
@@ -79,7 +73,7 @@ main {
 }
 
 .category-header {
-	font-size: 1.3rem;
+	font-size: 1.5rem;
 }
 
 .page-category,
@@ -91,11 +85,11 @@ main {
 	background: #ff0000;
 }
 
+
 /*Add new recipes title and submit button */
 
-#addnew{
-    color: #00766B;
-
+#addnew {
+	color: #00766B;
 }
 
 #submit {
@@ -159,25 +153,43 @@ main {
 /*** Small mobile devices ***/
 
 
-/*** Tested on Moto G4, Galaxy S5, Pixel2, Pixel 2XL, Iphone 5/SE, Iphone 6/7/8, Iphone 6/7/8 Plus, IphoneX, Ipad and Ipad Pro ***/
+/*** Tested on Moto G4, Galaxy S5, Pixel2, Pixel 2XL, Iphone 5/SE, Iphone 6/7/8, IphoneX, Iphone 6/7/8 Plus, IphoneX, Ipad and Ipad Pro ***/
 
-/***@media only screen and (min-width: 350px) and (max-width: 769px) {
-	.card {
-		height: 55rem;
+@media only screen and (min-width: 310px) and (max-width: 769px) {
+	#recipecard {
+		height: 45rem;
 	}
-	.card-image {
-		height: 35rem;
+	#imagerecipe {
+		height: 22%;
+	}
+	#titlerecipe {
+		padding-top: 16rem;
+	}
+}
+
+
+/***Tested on  Ipad and Ipad Pro ***/
+
+@media screen and (min-width: 770px) and (max-width: 1023px) {
+	#recipecard {
+		height: 40.5rem;
+	}
+	#imagerecipe {
+		height: 15%;
+	}
+	#titlerecipe {
+		padding-top: 15rem;
 	}
 }
 
 
 /***Tested on laptop, laptop with touch ***/
 
-/**@media only screen and (min-width: 770px) {
-	.card {
-		height: 60rem;
+@media screen and (min-width: 1024px) {
+	#recipecard {
+		height: 42.3rem;
 	}
-	.card-image {
-		height: 40rem;
+	#titlerecipe {
+		font-size: 1.3rem;
 	}
 }
