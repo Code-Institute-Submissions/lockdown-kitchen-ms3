@@ -7,7 +7,7 @@ To view the full recipe, the user has to click on the View recipe button-->
 <div class="container center categories">
    <div class="row">
       {% for recipe in recipes %}
-      <div class="recipe-publish col m6 s12">
+      <div class="recipe-publish col m4 s12">
          <div class="card">
             <div class="card-image">
                 <a href="{{url_for('display_recipe', recipe_id=recipe._id)}}">

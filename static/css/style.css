@@ -61,10 +61,17 @@ main {
     padding-top:1rem;
 }
 
+#card-main{
+    width: 15rem;
+    height: 42rem;
+    
+}
+
 .card {
 	border: #00766B solid 0.5rem;
 	border-radius: 0.5rem;
-	height: 38rem;
+    height: 39rem;
+	
 }
 
 .card-image {
@@ -82,9 +89,6 @@ main {
 
 #delete {
 	background: #ff0000;
-}
-#category{
-    padding-bottom:0.5rem;
 }
 
 /*Add new recipes title and submit button */

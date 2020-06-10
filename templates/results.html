@@ -21,7 +21,7 @@
 <title>Search</title>
    <div class="row center">
       {% for recipe in search %}
-      <div class="recipe-publish col m6 s12">
+      <div class="recipe-publish col m4 s12">
          <div class="card">
             <div class="card-image">
                <a href="{{url_for('display_recipe', recipe_id=recipe._id)}}">
